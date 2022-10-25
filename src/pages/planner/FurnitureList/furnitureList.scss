@@ -1,0 +1,58 @@
+@import '../../../styles/colors.scss';
+.list{
+    width:850px;
+    height:200px;
+    background-color: $light-cyan;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 0px 10px 1px rgba(34, 60, 80, 0.2);
+    &__content{
+        padding:20px;
+        height:100%;
+        width: 100%;
+        ul{
+            list-style: none;
+            padding:0;
+            display: flex;
+            width:100%;
+            line-height: 40px;
+            border-bottom:$air-superiority-blue solid 1px;
+            justify-content: space-around;
+            li{
+                font-size:18px;
+                font-weight:500;
+            }
+        }
+        .tables{
+            padding-top:15px;
+            display: flex;
+            overflow:auto;
+            .table{
+                height: 100%;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                p{
+                    width:140px;
+                    padding-top:10px;
+                    font-size:16px;
+                    font-weight: 500;
+                }
+            }
+            &::-webkit-scrollbar{
+                background-color: $air-superiority-blue;
+                height:5px;
+                border-radius: 5px;
+            }
+            &::-webkit-scrollbar-thumb{
+                background-color: #333333;
+                border-radius: 5px;
+            }
+        }
+        
+    }
+
+}

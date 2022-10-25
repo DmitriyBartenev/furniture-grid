@@ -5,10 +5,6 @@ main{
     justify-content: flex-start;
     align-items: flex-start;
     .content{
-        -webkit-box-shadow: 0px 0px 17px 2px rgba(51, 30, 54, 0.2);
-        -moz-box-shadow: 0px 0px 17px 2px rgba(51, 30, 54, 0.2);
-        box-shadow: 0px 0px 17px 2px rgba(51, 30, 54, 0.2);
-        background-color: $light-cyan;
         width:100%;
         height:800px;
         margin:0 50px 0 50px;

@@ -20,16 +20,12 @@ const App = () => {
             <div className='content'>
               <Routes>
                   <Route path='/' element={<Dashboard/>}/>
-                  <Route path='/planner' element={<Planner/>}/>
+                  <Route path='/planner/*' element={<Planner/>}/>
               </Routes>
             </div> 
         </Suspense>
       </main>
     </Router>
-
-
-
-
   )
 }
 
