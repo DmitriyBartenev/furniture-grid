@@ -21,12 +21,12 @@ export const FurnitureTablesList = [
     {id:12, title:'sofa', name:'Диван, центральная часть'}
 ]
 export const FurnitureCoordinates = [
-    {id:1, title:'X', type:'text', value:0 },
-    {id:2, title:'Y', type:'text', value:0},
-    {id:3, title:'Угол', type:'text', value:0},
-    {id:4, title:'Высота', type:'text', value:1},
-    {id:5, title:'Ширина', type:'text', value:1},
-    {id:6, title:'Слой', type:'text', value:''}
+    {id:1, title:'X', type:'text'},
+    {id:2, title:'Y', type:'text'},
+    {id:3, title:'Угол', type:'text'},
+    {id:4, title:'Высота', type:'text'},
+    {id:5, title:'Ширина', type:'text'},
+    {id:6, title:'Слой', type:'text'}
 ]
 export const FurnitureActions = [
     {id:1, title:'Сохранить'},

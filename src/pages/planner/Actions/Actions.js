@@ -1,11 +1,14 @@
 import { FurnitureActions } from "../../../data/FurnitureData";
 
+import './actions.scss'
 
 const Actions = () => {
 
+
+
     return(
-        <div>
-            <ul>
+        <div className="buttons">
+            <ul className="buttons__list">
                 {FurnitureActions.map(item => {
                     return(
                         <li>

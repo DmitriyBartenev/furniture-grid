@@ -1,8 +1,13 @@
+import { useState } from "react";
 import { FurnitureCoordinates } from "../../../data/FurnitureData";
 
 import '../Coordinates/coordinates.scss';
 
 const Coordinates = () => {
+
+    const [value, setValue] = useState('');
+
+    
 
     return(
         <div className="coordinates">
@@ -13,7 +18,10 @@ const Coordinates = () => {
                         return(
                             <li>
                                 <p>{item.title}</p>
-                                <input type={item.type} value={item.value}/>
+                                <input 
+                                    type={item.type} 
+                                    value={value}
+                                    onChange={(e) => setValue(e.target.value)}/>
                             </li>
                         )
                     })}
