@@ -11,7 +11,7 @@ const Actions = () => {
             <ul className="buttons__list">
                 {FurnitureActions.map(item => {
                     return(
-                        <li>
+                        <li key={item.id}>
                             <button>{item.title}</button>
                         </li>
                     )

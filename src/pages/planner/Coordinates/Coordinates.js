@@ -16,7 +16,7 @@ const Coordinates = () => {
                 <ul>
                     {FurnitureCoordinates.map(item => {
                         return(
-                            <li>
+                            <li key={item.id}>
                                 <p>{item.title}</p>
                                 <input 
                                     type={item.type} 
