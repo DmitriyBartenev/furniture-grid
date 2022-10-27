@@ -7,18 +7,19 @@ export const FurnitureLinksList = [
     {id:5, name:'Прочее'}
 ]
 export const FurnitureTablesList = [
-    {id:1, title:'table', name:'Стол на 5 мест'},
-    {id:2, title:'sofa', name:'Стол круглый 4 места'},
-    {id:3, title:'table', name:'Стол у стены на 2 персоны'},
-    {id:4, title:'sofa', name:'Диван, левая часть'},
-    {id:5, title:'table', name:'Диван, правая часть'},
-    {id:6, title:'sofa', name:'Диван, центральная часть'},
-    {id:7, title:'table', name:'Стол на 5 мест'},
-    {id:8, title:'sofa', name:'Стол круглый 4 места'},
-    {id:9, title:'table', name:'Стол у стены на 2 персоны'},
-    {id:10, title:'sofa', name:'Диван, левая часть'},
-    {id:11, title:'table', name:'Диван, правая часть'},
-    {id:12, title:'sofa', name:'Диван, центральная часть'}
+    {id:1, title:'table', name:'Стол на 4 места'},
+    {id:2, title:'sofa', name:'Комфортное кресло'},
+    {id:3, title:'table2', name:'Стол у стены на 2 персоны'},
+    {id:4, title:'sofa2', name:'Диван на 2 персоны'},
+    {id:5, title:'table3', name:'Небольшой столик'},
+    {id:6, title:'armchair', name:'Мягкое и уютное кожаное кресло'},
+    {id:7, title:'armchair2', name:'Парикмахерский стул'},
+    {id:8, title:'chair', name:'Небольшой барный стул'},
+    {id:9, title:'chair2', name:'Режисерский стул'},
+    {id:10, title:'chair3', name:'Столик на двоих'},
+    {id:11, title:'couch', name:'Маленький диван 2'},
+    {id:12, title:'table3', name:'Маленький столик на 2 персоны'},
+    {id:13, title:'sofa2', name:'Диван, левая часть'},
 ]
 export const FurnitureCoordinates = [
     {id:1, title:'X', type:'text'},

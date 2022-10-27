@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import hammer from '../../assets/hammer.png';
-import dashboard from '../../assets/dashboard.png';
+import hammer from '../../assets/navbar/hammer.png';
+import dashboard from '../../assets/navbar/dashboard.png';
 
 import './navbar.scss';
 

@@ -35,7 +35,11 @@
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: center;
+                img{
+                    cursor: pointer;
+                }
                 p{
+                    height:67px;
                     width:140px;
                     padding-top:10px;
                     font-size:16px;

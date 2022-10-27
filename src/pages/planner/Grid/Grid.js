@@ -4,9 +4,21 @@ import { useEffect, useRef, useState } from 'react';
 import './grid.scss';   
 
 const Grid = () => {
-    let canvasRef = useRef(null);
-    let contextRef = useRef(null);
+    const canvasRef = useRef(null);
+    //let contextRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
+    // eslint-disable-next-line
+    const [shapes, setShapes] = useState([
+        {x:200, y:50, width: 200, height:200, color:'red'},
+        {x:100, y:400, width: 100, height:80, color:'blue'},
+        {x:200, y: 300, width: 50, height:50, color:'white'}])
+    const [offsetX, setOffsetX] = useState();
+    const [offsetY, setOffsetY] = useState();
+    const [startX, setStartX] = useState();
+    const [startY, setStartY] = useState();
+    const [mouseX, setMouseX] = useState();
+    const [mouseY, setMouseY] = useState();
+    const [currentShapeIndex, setCurrentShapeIndex] = useState(null);
 
     useEffect(()=>{
 
@@ -19,13 +31,11 @@ const Grid = () => {
         let canvas_width = canvas.width;
         let canvas_height = canvas.height;
 
-        let offset_x;
-        let offset_y;
 
         let get_offset = function(){
             let canvas_offsets = canvas.getBoundingClientRect();
-            offset_x = canvas_offsets.left;
-            offset_y = canvas_offsets.top;
+            setOffsetX(canvas_offsets.left);
+            setOffsetY(canvas_offsets.top);
         }
 
         get_offset();
@@ -33,14 +43,6 @@ const Grid = () => {
         window.onscroll = function(){get_offset();}
         window.onresize = function(){get_offset();}
         canvas.onresize = function(){get_offset();}
-
-        let shapes = [];
-        let current_shape_index = null;
-        let startX;
-        let startY;
-
-        shapes.push({x:200, y:50, width: 200, height:200, color:'red'})
-        shapes.push({x:100, y:400, width: 100, height:80, color:'blue'})
 
         let is_mouse_in_shape = function(x, y, shape){
             let shape_left = shape.x;
@@ -53,24 +55,23 @@ const Grid = () => {
             }
             return false;
         }
-
+        
         let mouse_down = function(event){
             event.preventDefault();
 
-            startX = parseInt(event.clientX - offset_x);
-            startY = parseInt(event.clientY - offset_y);
+            setStartX(parseInt(event.clientX - offsetX))
+            setStartY(parseInt(event.clientY - offsetY))
 
             let index = 0;
 
             for(let shape of shapes){
                 if(is_mouse_in_shape(startX, startY, shape)){
-                    current_shape_index = index;
+                    setCurrentShapeIndex(index);
                     setIsDragging(true);
                     return;
                 }
                 index++;
             }
-
         }
 
         let mouse_up = function(event){
@@ -94,35 +95,36 @@ const Grid = () => {
                 return;
             }else{
                 event.preventDefault();
-                
-                let mouseX = parseInt(event.clientX - offset_x);
-                let mouseY = parseInt(event.clientY - offset_y);
+
+                setMouseX(parseInt(event.clientX - offsetX));
+                setMouseY(parseInt(event.clientY - offsetY));
                 
                 let dx = mouseX - startX;
                 let dy = mouseY - startY;
                 
-                startX = parseInt(event.clientX - offset_x);
-                startY = parseInt(event.clientY - offset_y);
+
+                setStartX(parseInt(event.clientX - offsetX))
+                setStartY(parseInt(event.clientY - offsetY))
                 
                 let index = 0;
 
                 for(let shape of shapes){
                     if(is_mouse_in_shape(startX, startY, shape)){
-                        current_shape_index = index;
+                        setCurrentShapeIndex(index);
                         return;
                     }
                     index++;
                 }
             
-                let current_shape = shapes[current_shape_index];
+                let current_shape = shapes[currentShapeIndex];
 
                 current_shape.x += dx;
                 current_shape.y += dy;
 
                 draw_shapes();
                 
-                startX = mouseX;
-                startY = mouseY;
+                setStartX(mouseX);
+                setStartY(mouseY);
             }
         }
 
@@ -131,7 +133,7 @@ const Grid = () => {
         canvas.onmouseout = mouse_out;
         canvas.onmousemove = mouse_move;
 
-        var draw_shapes = function(){
+        let draw_shapes = function(){
             context.clearRect(0,0, canvas_width, canvas_height);
             for(let shape of shapes){
                 context.fillStyle = shape.color;
@@ -141,7 +143,7 @@ const Grid = () => {
         
         draw_shapes()
 
-        context.strokeStyle = 'white';
+        /* context.strokeStyle = 'white';
         context.lineWidth = 0.1;    
         contextRef.current = context;
 
@@ -153,9 +155,9 @@ const Grid = () => {
             context.lineTo(650, i);
 
             context.stroke()
-        }
+        } */
 
-    }, [isDragging]);
+    }, [isDragging, offsetX, offsetY, startX, startY, shapes, currentShapeIndex, mouseX, mouseY]);
 
     return(
         <div className = 'grid'>

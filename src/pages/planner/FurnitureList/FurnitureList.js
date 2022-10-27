@@ -1,9 +1,17 @@
 import { FurnitureLinksList, FurnitureTablesList } from "../../../data/FurnitureData";
-
+import React, { useRef } from "react";
 
 import './furnitureList.scss'
 
 const FurnitureList = () => {
+
+    const tableRef = useRef(null);
+
+    const getElement = (e) => {
+        const item = e.target;
+        console.log(item);
+    }
+
     return(
         <div className="list">
             <div className="list__content">
@@ -18,7 +26,15 @@ const FurnitureList = () => {
                     {FurnitureTablesList.map(item => {
                         return(
                             <div className="table" key={item.id}>
-                                <img src={require('../../../assets/' + item.title + '.png')} alt={item.title} width='50px' height='50px'/>
+                                <img 
+                                    src={require('../../../assets/furniture/' + item.title + '.png')} 
+                                    alt={item.title} 
+                                    width='50px' 
+                                    height='50px'
+                                    ref={tableRef}
+                                    onClick={getElement}
+                                    id={item.id}
+                                    />
                                 <p>{item.name}</p>
                             </div>
                         )
