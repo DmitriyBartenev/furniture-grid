@@ -128,10 +128,22 @@ const Grid = () => {
             }
         }
 
-        canvas.onmousedown = mouse_down;
+        /* canvas.onmousedown = mouse_down;
         canvas.onmouseup = mouse_up;
         canvas.onmouseout = mouse_out;
-        canvas.onmousemove = mouse_move;
+        canvas.onmousemove = mouse_move; */
+
+        canvas.addEventListener('mousedown', mouse_down);
+        canvas.addEventListener('mouseup', mouse_up);
+        canvas.addEventListener('mouseout', mouse_out);
+        canvas.addEventListener('mousemove', mouse_move);
+
+        const cleanup = () => {
+            canvas.removeEventListener('mousedown', mouse_down);
+            canvas.removeEventListener('mouseup', mouse_up);
+            canvas.removeEventListener('mouseout', mouse_out);
+            canvas.removeEventListener('mousemove', mouse_move);
+        }
 
         let draw_shapes = function(){
             context.clearRect(0,0, canvas_width, canvas_height);
@@ -142,6 +154,8 @@ const Grid = () => {
         }
         
         draw_shapes()
+
+        return cleanup;
 
         /* context.strokeStyle = 'white';
         context.lineWidth = 0.1;    

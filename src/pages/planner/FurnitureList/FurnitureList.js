@@ -27,7 +27,7 @@ const FurnitureList = () => {
                         return(
                             <div className="table" key={item.id}>
                                 <img 
-                                    src={require('../../../assets/furniture/' + item.title + '.png')} 
+                                    src={require('../../../assets/tables/' + item.title + '.png')} 
                                     alt={item.title} 
                                     width='50px' 
                                     height='50px'
