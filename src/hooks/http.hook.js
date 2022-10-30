@@ -19,7 +19,5 @@ export const useHttp = () => {
 
     },[])
 
-    return{
-        request
-    }
+    return{request}
 }

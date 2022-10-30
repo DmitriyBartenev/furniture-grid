@@ -1,30 +1,32 @@
+import { createReducer } from "@reduxjs/toolkit"
+
+import {
+    furnitureFetching,
+    furnitureFetched,
+    furnitureFetchingError,
+} from '../actions';
 
 const initialState = {
     furniture:[],
     furnitureLoadingStatus:'idle'
 }
 
-const furniture = (state = initialState, action) => {
-    switch(action.type){
-        case 'FURNITURE_FETCHING':
-            return{
-                ...state,
-                furnitureLoadingStatus:'loading'
-            }
-        case 'FURNITURE_FETCHED':
-            return{
-                ...state,
-                furniture: action.payload,
-                furnitureLoadingStatus:'idle'
-            }
-        case 'FURNITURE_FETCHING_ERROR':
-            return{
-                ...state,
-                furnitureLoadingStatus:'error'
-            }
-        default: return state;
-    }
-}
+
+const furniture = createReducer(initialState, builder => {
+    builder
+        .addCase(furnitureFetching, state => {
+            state.furnitureLoadingStatus = 'loading';
+        })
+        .addCase(furnitureFetched, (state, action) => {
+            state.furnitureLoadingStatus = 'idle'
+            state.furniture = action.payload;
+        })
+        .addCase(furnitureFetchingError, state => {
+            state.furnitureLoadingStatus = 'error';
+        })
+        .addDefaultCase(() => {})
+})
+
 
 export default furniture;
 

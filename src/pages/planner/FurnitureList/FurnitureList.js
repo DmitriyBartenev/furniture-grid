@@ -1,9 +1,20 @@
+import { useHttp } from '../../../hooks/http.hook';
+import { useEffect } from 'react';
+import { useDispatch, useSelector} from 'react-redux';
+
+import { fetchFurniture } from '../../../redux/actions';
+import Spinner from '../../../components/spinner/Spinner';
+
 import { FurnitureLinksList, FurnitureTablesList } from "../../../data/FurnitureData";
 import React, { useRef } from "react";
 
 import './furnitureList.scss'
 
 const FurnitureList = () => {
+
+    const {request} = useHttp();
+
+    
 
     const tableRef = useRef(null);
 
