@@ -1,4 +1,4 @@
-import FurnitureList from "../planner/FurnitureList/FurnitureList";
+import FurnitureList from "./FurnitureList/FurnitureList";
 import Actions from "./Actions/Actions";
 import Coordinates from "./Coordinates/Coordinates";
 import Grid from "./Grid/Grid";
