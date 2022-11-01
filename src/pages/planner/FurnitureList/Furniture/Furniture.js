@@ -19,7 +19,7 @@ const Furniture = () => {
             if(filter === 'all'){
                 return furniture
             }else{
-                return furniture.filter(item => item.element === filter);
+                return furniture.filter(item => item.filter === filter);
             }
         }
         );
@@ -43,7 +43,7 @@ const Furniture = () => {
     const renderFurnitureList = (arr) => {
         if(arr.length === 0){
             return(
-                <h5>Не удалось загрузить мебель</h5>
+                <h5 className='error'>Не удалось загрузить мебель</h5>
             )
         }
 
@@ -58,16 +58,9 @@ const Furniture = () => {
 
 
     return(
-        <div className="list">
-            <div className="list__content">
-                <ul>
-                    
-                </ul>
-                <div className="tables">
-                    {elements}
-                </div>
-            </div>
-        </div>
+        <ul className="tables">
+            {elements}
+        </ul>
     )
 }
 

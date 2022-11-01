@@ -3,7 +3,7 @@ import { useHttp } from "../../hooks/http.hook";
 
 export const fetchFurniture = (request) => (dispatch) => {
     dispatch(furnitureFetching());
-    request('http://localhost:3001/tables')
+    request('http://localhost:3001/furniture')
         .then(data => dispatch(furnitureFetched(data)))
         .catch(() => dispatch(furnitureFetchingError()))
 }

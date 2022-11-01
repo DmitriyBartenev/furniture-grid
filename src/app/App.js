@@ -17,12 +17,12 @@ const App = () => {
       <main>
         <NavBar/>
         <Suspense fallback={<Spinner/>}>
-            <div className='content'>
+            <section>
               <Routes>
                   <Route path='/' element={<Dashboard/>}/>
                   <Route path='/planner/*' element={<Planner/>}/>
               </Routes>
-            </div> 
+            </section> 
         </Suspense>
       </main>
     </Router>

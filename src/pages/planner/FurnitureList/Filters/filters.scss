@@ -1,6 +1,6 @@
 @import '../../../../styles/colors.scss';
 
-ul{
+.filters{
     list-style: none;
     padding:0;
     display: flex;
@@ -8,4 +8,18 @@ ul{
     line-height: 40px;
     border-bottom:$air-superiority-blue solid 1px;
     justify-content: space-around;
+    .filter{
+        font-size:18px;
+        font-weight:500;
+        cursor: pointer;
+        transition: .3s;
+        &:hover{
+            color:$air-superiority-blue;
+        }
+    }
+    .error{
+        width: 100%;
+        font-size:18px;
+        text-align: center;
+    }
 }

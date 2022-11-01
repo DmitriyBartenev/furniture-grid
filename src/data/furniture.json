@@ -1,0 +1,128 @@
+{
+    "furniture":[
+        {
+            "id": 1,
+            "name": "Стол на 4 места",
+            "alt": "table1",
+            "filter":"table"
+        },
+        {
+            "id": 2,
+            "name": "Стол у стены на 2 персоны",
+            "alt": "table2",
+            "filter":"table"
+        },
+        {
+            "id": 3,
+            "name": "Небольшой столик",
+            "alt": "table3",
+            "filter":"table"
+        },
+        {
+            "id": 4,
+            "name": "Маленький столик на 2 персоны",
+            "alt": "table4",
+            "filter":"table"
+        },
+        {
+            "id": 5,
+            "name": "Небольшой столик",
+            "alt": "table5",
+            "filter":"table"
+        },
+        {
+            "id": 6,
+            "name": "Маленький столик на 2 персоны",
+            "alt": "table6",
+            "filter":"table"
+        },
+        {
+            "id": 7,
+            "name": "Небольшой столик",
+            "alt": "table7",
+            "filter":"table"
+        },
+        {
+            "id": 8,
+            "name": "Маленький столик на 2 персоны",
+            "alt": "table8",
+            "filter":"table"
+        },        
+        {
+            "id": 9,
+            "name": "Небольшой столик",
+            "alt": "table9",
+            "filter":"table"
+        },
+        {
+            "id": 10,
+            "name": "Маленький столик на 2 персоны",
+            "alt": "table10",
+            "filter":"table"
+        }
+        ,        
+        {
+            "id": 11,
+            "name": "Небольшой столик",
+            "alt": "table11",
+            "filter":"table"
+        },
+        {
+            "id": 12,
+            "name": "Маленький столик на 2 персоны",
+            "alt": "table12",
+            "filter":"table"
+        },
+        {
+            "id": 13,
+            "name": "Маленький столик на 2 персоны",
+            "alt": "table13",
+            "filter":"table"
+        },
+        {
+            "id": 14,
+            "name": "Маленький столик на 2 персоны",
+            "alt": "table14",
+            "filter":"table"
+        },
+        {
+            "id": 15,
+            "name": "Маленький столик на 2 персоны",
+            "alt": "table15",
+            "filter":"table"
+        },
+        {
+            "id": 16,
+            "name": "Маленький столик на 2 персоны",
+            "alt": "table16",
+            "filter":"table"
+        }
+    ],
+    "filters":[
+        {
+            "id":1,
+            "name":"all",
+            "label":"Все"
+        },
+        {
+            "id":2,
+            "name":"table",
+            "label":"Столы"
+        },
+        {
+            "id":3,
+            "name":"chair",
+            "label":"Стулья"
+        },
+        {
+            "id":4,
+            "name":"sofa",
+            "label":"Диваны"
+        },
+        {
+            "id":5,
+            "name":"other",
+            "label":"Прочее"
+        }
+    ]
+}

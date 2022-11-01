@@ -1,17 +1,19 @@
 
+import './furnitureListItem.scss';
 
-const FurnitureListItem = ({name, title, id}) => {
+const FurnitureListItem = ({name, alt, id}) => {
+
     return(
-        <div className="table" key={id}>
+        <li className="table" key={id}>
             <img 
-                src={require('../../../../../assets/tables/' + title + '.png')} 
-                alt={title} 
+                src={require('../../../../../assets/tables/' + alt + '.svg')} 
+                alt={alt} 
                 width='50px' 
                 height='50px'
                 id={id}
                 />
             <p>{name}</p>
-        </div>
+        </li>
     )
 }
 
