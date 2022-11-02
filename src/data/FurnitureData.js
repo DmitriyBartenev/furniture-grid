@@ -6,8 +6,3 @@ export const FurnitureCoordinates = [
     {id:5, title:'Ширина', type:'text'},
     {id:6, title:'Слой', type:'text'}
 ]
-export const FurnitureActions = [
-    {id:1, title:'Сохранить'},
-    {id:2, title:'Удалить все'},
-    {id:3, title:'Удалить элемент'}
-]

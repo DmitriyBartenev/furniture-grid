@@ -1,5 +1,5 @@
-import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
-import { useHttp } from "../../hooks/http.hook";
+import { createAction } from "@reduxjs/toolkit";
+
 
 export const fetchFurniture = (request) => (dispatch) => {
     dispatch(furnitureFetching());

@@ -30,6 +30,7 @@ const Filters = () => {
         if(arr.length === 0){
             return <h5 className='error'>Фильтры не найдены</h5>
         }
+
         return arr.map(({id, name, label}) => {
             return <li 
                     className='filter'
