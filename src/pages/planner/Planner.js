@@ -1,9 +1,9 @@
 import FurnitureList from "./FurnitureList/FurnitureList";
 import Actions from "./Actions/Actions";
 import Coordinates from "./Coordinates/Coordinates";
-import Grid from "./Grid/Grid";
 
 import './planner.scss';
+import Test from "./Grid/Test";
 
 const Planner = () => {
 
@@ -17,7 +17,7 @@ const Planner = () => {
                 <Actions/>
             </div>
             <div>
-                <Grid/>
+                <Test/>
             </div>
         </div>
     )
