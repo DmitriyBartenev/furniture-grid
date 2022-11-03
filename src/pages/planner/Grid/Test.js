@@ -16,10 +16,22 @@ const Test = () => {
 
     const fur = useSelector(state => state.furniture.furniture);
 
+    const [furni, setFurni] = useState(fur);
+
+    console.log(furni)
+
+    const handleOnDragEnd = (result) => {
+        const items = Array.from(fur);
+        const [reorderedItem] = items.splice(result.source.index, 1);
+        items.splice(result.destination.index, 0, reorderedItem);
+
+        
+    }
+
     return(
         <div className = 'grid'>
             <h3>Карта заведения</h3>
-            <DragDropContext>
+            <DragDropContext onDragEnd={handleOnDragEnd}>
                 <Droppable droppableId='furnitures'>
                     {(provided)=>(
                         <ul className='grid__layout' {...provided.droppableProps} ref={provided.innerRef}>
@@ -38,8 +50,9 @@ const Test = () => {
                                             </li>  
                                         )}
                                     </Draggable>
-                                     )
+                                )
                             })}
+                            {provided.placeholder}
                         </ul>
                     )}
                 </Droppable>

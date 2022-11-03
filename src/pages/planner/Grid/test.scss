@@ -21,6 +21,8 @@
         width:650px;
         height:700px;
         border:solid 1px #FFFFFF;
+        display: flex;
+        flex-wrap: wrap;
         li{
             height:50px;
         }
